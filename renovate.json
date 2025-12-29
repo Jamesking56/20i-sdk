@@ -16,19 +16,25 @@
         ":renovatePrefix",
         ":separateMultipleMajorReleases"
     ],
-    "additionalReviewers": ["Jamesking56"],
+    "additionalReviewers": [
+        "Jamesking56"
+    ],
     "dependencyDashboardAutoclose": true,
-    "labels": ["dependencies"],
+    "labels": [
+        "dependencies"
+    ],
     "platformAutomerge": true,
     "rangeStrategy": "widen",
     "rollbackPrs": true,
-    "schedule": ["* 9-23 * * 7"],
+    "schedule": [
+        "* 9-23 * * 7"
+    ],
     "timezone": "Europe/London",
-    "transitiveRemediation": true,
     "vulnerabilityAlerts": {
         "enabled": true,
-        "labels": ["security"],
-        "schedule": "at any time",
-        "transitiveRemediation": true
+        "labels": [
+            "security"
+        ],
+        "schedule": "at any time"
     }
 }
