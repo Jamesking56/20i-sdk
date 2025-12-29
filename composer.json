@@ -1,0 +1,47 @@
+{
+    "name": "jamesking.dev/20i-sdk",
+    "description": "20i.com Reseller API SDK",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "James King",
+            "email": "james@jamesking.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "saloonphp/saloon": "^3.0",
+        "spatie/laravel-data": "^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.48",
+        "jamesking.dev/coding-standards": "^0.1.0",
+        "laravel/pint": "^1.26",
+        "rector/rector": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JamesKingDev\\TwentyI\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rector\\Custom\\": "rector/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "cs": [
+            "vendor/bin/rector",
+            "vendor/bin/pint --config vendor/jamesking.dev/coding-standards/pint.json"
+        ],
+        "cstest": "vendor/bin/pint --test --config vendor/jamesking.dev/coding-standards/pint.json"
+    }
+}
