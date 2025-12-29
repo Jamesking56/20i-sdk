@@ -1,7 +1,7 @@
 # 20i PHP SDK
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/jamesking.dev/20i-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/jamesking.dev/20i-sdk)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jamesking.dev/20i-sdk.svg?style=flat-square)](https://packagist.org/packages/jamesking.dev/20i-sdk)
+[![Total Downloads](https://img.shields.io/packagist/dt/jamesking.dev/20i-sdk.svg?style=flat-square)](https://packagist.org/packages/jamesking.dev/20i-sdk)
 
 This package is a full PHP SDK for the 20i Reseller API using [Saloon](https://docs.saloon.dev/) v3.
 It provides the Saloon Request classes, Saloon Resources and a base SDK class to make it easier to use the 20i Reseller API.
