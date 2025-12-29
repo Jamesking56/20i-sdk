@@ -4,4 +4,10 @@
 *.php diff=php
 
 /.github export-ignore
-/tests export-ignore
+/rector export-ignore
+/.editorconfig export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/CONTRIBUTING.md export-ignore
+/generate.sh export-ignore
+/rector.php export-ignore
