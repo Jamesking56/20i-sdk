@@ -1,0 +1,51 @@
+name: Run generate.sh script and Manage PR
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-node@v6
+
+      - name: Install apib2swagger
+        run: npm install -g apib2swagger
+
+      - name: Setup PHP and install Saloon SDK Generator
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: crescat-io/saloon-sdk-generator
+
+      - uses: ramsey/composer-install@v3
+
+      - name: Run generate.sh script
+        run: |
+          chmod +x ./generate.sh
+          ./generate.sh
+
+      - name: Create or update PR
+        id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "auto/generate-script"
+          commit-message: "Automated update from generate.sh script"
+          title: "Automated update from generate.sh script"
+          body: "This pull request was automatically created or updated by GitHub Actions."
+          delete-branch: true
