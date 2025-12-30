@@ -86,7 +86,7 @@ class TwentyI extends Connector
 
     protected function defaultAuth(): TokenAuthenticator
     {
-        return new TokenAuthenticator($this->token);
+        return new TokenAuthenticator(base64_encode($this->token));
     }
 
     protected function defaultHeaders(): array
