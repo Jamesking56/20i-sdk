@@ -26,6 +26,29 @@ awk -i inplace '
 /^### / { m=""; if ($0 ~ /\[[^]]*\]$/) m=gensub(/.*(\[[^]]*\])$/, "\\1", "g", $0); sub(/^### .*/, "### " t m) }
 1' 20i.apib
 
+# Fix SSH Keys endpoints having both GET and POST merged together (losing the GET version)
+awk -i inplace '
+/^## /{
+  current=""
+  section=$0
+  sub(/^## */, "", section)
+  sub(/ *\[[^]]*\].*/, "", section)
+  if (section == "SSH Keys") current="SSH Keys"
+}
+
+/^### / && current=="SSH Keys"{
+  if      ($0 ~ /\[GET\]$/)    v="Get "
+  else if ($0 ~ /\[POST\]$/)   v="Update "
+  else if ($0 ~ /\[DELETE\]$/) v="Delete "
+  else                         next
+
+  m=gensub(/.*(\[[^]]*\])$/, "\\1", 1, $0)
+  sub(/^### .*/, "### " v current m)
+}
+
+1
+' 20i.apib
+
 # Convert from apib to swagger
 apib2swagger -i 20i.apib -o 20i.json
 sleep 1

@@ -65,6 +65,7 @@ use JamesKingDev\TwentyI\Requests\Packages\Forwarders;
 use JamesKingDev\TwentyI\Requests\Packages\FtpCredentials;
 use JamesKingDev\TwentyI\Requests\Packages\FtpUsers;
 use JamesKingDev\TwentyI\Requests\Packages\GetPackageWebInfo;
+use JamesKingDev\TwentyI\Requests\Packages\GetSshKeys;
 use JamesKingDev\TwentyI\Requests\Packages\HomeDirectory;
 use JamesKingDev\TwentyI\Requests\Packages\Hotlinks;
 use JamesKingDev\TwentyI\Requests\Packages\LimitsDomain;
@@ -104,7 +105,6 @@ use JamesKingDev\TwentyI\Requests\Packages\SessionLimitsPackage;
 use JamesKingDev\TwentyI\Requests\Packages\Sitemap;
 use JamesKingDev\TwentyI\Requests\Packages\SoftwareReInstall;
 use JamesKingDev\TwentyI\Requests\Packages\SshIpAddress;
-use JamesKingDev\TwentyI\Requests\Packages\SshKeys;
 use JamesKingDev\TwentyI\Requests\Packages\SslAddFree;
 use JamesKingDev\TwentyI\Requests\Packages\SslCertificates;
 use JamesKingDev\TwentyI\Requests\Packages\SslForceStatus;
@@ -119,6 +119,7 @@ use JamesKingDev\TwentyI\Requests\Packages\TransfersLockStatus;
 use JamesKingDev\TwentyI\Requests\Packages\TransfersModify;
 use JamesKingDev\TwentyI\Requests\Packages\TransfersResendVerification;
 use JamesKingDev\TwentyI\Requests\Packages\TransfersStatus;
+use JamesKingDev\TwentyI\Requests\Packages\UpdateSshKeys;
 use JamesKingDev\TwentyI\Requests\Packages\WebDiskUsage;
 use JamesKingDev\TwentyI\Requests\Packages\Webmail;
 use JamesKingDev\TwentyI\Requests\Packages\WebUsageStats;
@@ -641,9 +642,14 @@ class Packages extends BaseResource
         return $this->connector->send(new SshIpAddress($packageId));
     }
 
-    public function sshKeys(float|int $packageId): Response
+    public function getSshKeys(float|int $packageId): Response
     {
-        return $this->connector->send(new SshKeys($packageId));
+        return $this->connector->send(new GetSshKeys($packageId));
+    }
+
+    public function updateSshKeys(float|int $packageId): Response
+    {
+        return $this->connector->send(new UpdateSshKeys($packageId));
     }
 
     public function sslAddFree(float|int $packageId): Response

@@ -5,19 +5,15 @@ declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Packages;
 
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * SSH Keys.
+ * Get SSH Keys.
  */
-class SshKeys extends Request implements HasBody
+class GetSshKeys extends Request
 {
-    use HasJsonBody;
-
-    protected Method $method = Method::POST;
+    protected Method $method = Method::GET;
 
     public function __construct(
         protected float|int $packageId,
