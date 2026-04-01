@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\Reseller;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class StackUser implements HasBody
+class StackUser extends Request implements HasBody
 {
     use HasJsonBody;
 

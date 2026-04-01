@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\Vps;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class Start implements HasBody
+class Start extends Request implements HasBody
 {
     use HasJsonBody;
 

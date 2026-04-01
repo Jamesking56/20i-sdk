@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\ManagedVps;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class DeletePackage implements HasBody
+class DeletePackage extends Request implements HasBody
 {
     use HasJsonBody;
 

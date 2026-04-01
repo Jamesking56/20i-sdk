@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\MssqlDatabases;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class AssignDatabase implements HasBody
+class AssignDatabase extends Request implements HasBody
 {
     use HasJsonBody;
 

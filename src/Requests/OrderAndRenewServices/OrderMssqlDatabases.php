@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\OrderAndRenewServices;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class OrderMssqlDatabases implements HasBody
+class OrderMssqlDatabases extends Request implements HasBody
 {
     use HasJsonBody;
 

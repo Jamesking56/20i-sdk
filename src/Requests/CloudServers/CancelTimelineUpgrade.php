@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\CloudServers;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class CancelTimelineUpgrade implements HasBody
+class CancelTimelineUpgrade extends Request implements HasBody
 {
     use HasJsonBody;
 

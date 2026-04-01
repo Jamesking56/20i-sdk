@@ -6,9 +6,10 @@ namespace JamesKingDev\TwentyI\Requests\WebsiteTurbo;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
+use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class UnassignPackage implements HasBody
+class UnassignPackage extends Request implements HasBody
 {
     use HasJsonBody;
 

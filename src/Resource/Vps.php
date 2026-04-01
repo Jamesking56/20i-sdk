@@ -22,6 +22,7 @@ use JamesKingDev\TwentyI\Requests\Vps\Start;
 use JamesKingDev\TwentyI\Requests\Vps\Vnc;
 use JamesKingDev\TwentyI\Requests\Vps\VncLock;
 use JamesKingDev\TwentyI\Requests\Vps\VncUnlock;
+use JamesKingDev\TwentyI\Requests\Vps\Vps as VpsRequest;
 use JamesKingDev\TwentyI\Requests\Vps\VpsName;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
