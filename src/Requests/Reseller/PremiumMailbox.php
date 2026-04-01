@@ -1,27 +1,26 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Reseller;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Premium Mailbox.
- */
-class PremiumMailbox extends Request
+class PremiumMailbox implements HasBody
 {
-    protected Method $method = Method::GET;
+    use HasJsonBody;
+
+    protected Method $method = Method::POST;
 
     public function __construct(
-        protected string $id,
+        protected readonly string $id,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/premium_mailbox/{$this->id}";
+        return "/reseller/premiumMailbox/{$this->id}";
     }
 }

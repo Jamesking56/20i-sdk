@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -11,7 +12,7 @@ use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * MySQL User Password.
+ * MySql User Password.
  */
 class MySqlUserPassword extends Request implements HasBody
 {
@@ -26,6 +27,6 @@ class MySqlUserPassword extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/mysqlUserPassword";
+        return "/package/{$this->packageId}/web/mysql/userPassword";
     }
 }

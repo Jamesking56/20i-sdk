@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * Get SSH Keys.
+ * Get Ssh Keys.
  */
 class GetSshKeys extends Request
 {
@@ -22,6 +23,6 @@ class GetSshKeys extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/sshkeys";
+        return "/package/{$this->packageId}/ssh/keys";
     }
 }

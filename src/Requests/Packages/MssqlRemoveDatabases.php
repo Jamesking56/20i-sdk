@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -11,7 +12,7 @@ use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * MSSQL Remove Databases.
+ * Mssql Remove Databases.
  */
 class MssqlRemoveDatabases extends Request implements HasBody
 {
@@ -26,6 +27,6 @@ class MssqlRemoveDatabases extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/removeMssqlDatabase";
+        return "/package/{$this->packageId}/mssql/removeDatabase";
     }
 }

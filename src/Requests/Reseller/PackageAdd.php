@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -7,25 +6,21 @@ namespace JamesKingDev\TwentyI\Requests\Reseller;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Package Add.
- */
-class PackageAdd extends Request implements HasBody
+class PackageAdd implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $resellerId,
+        protected readonly float|int $resellerId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/reseller/{$this->resellerId}/addWeb";
+        return "/reseller/{$this->resellerId}/package/add";
     }
 }

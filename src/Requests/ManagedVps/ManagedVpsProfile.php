@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -7,25 +6,21 @@ namespace JamesKingDev\TwentyI\Requests\ManagedVps;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Managed VPS Profile.
- */
-class ManagedVpsProfile extends Request implements HasBody
+class ManagedVpsProfile implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $managedVpsId,
+        protected readonly float|int $managedVpsId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/managed_vps/{$this->managedVpsId}/profileReset";
+        return "/managedVPS/{$this->managedVpsId}/profile";
     }
 }

@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * PHP Config.
+ * Php Config.
  */
 class PhpConfig extends Request
 {
@@ -17,7 +18,7 @@ class PhpConfig extends Request
 
     public function __construct(
         protected float|int $packageId,
-        protected string $phpConfigId,
+        protected float|int $phpConfigId,
     ) {
     }
 

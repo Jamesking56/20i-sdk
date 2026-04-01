@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 

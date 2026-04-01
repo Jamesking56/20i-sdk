@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -106,9 +105,9 @@ class Reseller extends BaseResource
         return $this->connector->send(new PackageBrand($resellerId));
     }
 
-    public function packageCount(float|int $resellerId): Response
+    public function packageCount(): Response
     {
-        return $this->connector->send(new PackageCount($resellerId));
+        return $this->connector->send(new PackageCount());
     }
 
     public function packageDelete(float|int $resellerId): Response
@@ -116,9 +115,9 @@ class Reseller extends BaseResource
         return $this->connector->send(new PackageDelete($resellerId));
     }
 
-    public function packageTypes(float|int $resellerId): Response
+    public function packageTypes(): Response
     {
-        return $this->connector->send(new PackageTypes($resellerId));
+        return $this->connector->send(new PackageTypes());
     }
 
     public function packageUpdate(float|int $resellerId): Response
@@ -126,9 +125,9 @@ class Reseller extends BaseResource
         return $this->connector->send(new PackageUpdate($resellerId));
     }
 
-    public function passwordResetEmail(float|int $resellerId): Response
+    public function passwordResetEmail(string $username): Response
     {
-        return $this->connector->send(new PasswordResetEmail($resellerId));
+        return $this->connector->send(new PasswordResetEmail($username));
     }
 
     public function premiumMailbox(string $id): Response
@@ -151,9 +150,9 @@ class Reseller extends BaseResource
         return $this->connector->send(new ResellerSettings($resellerId));
     }
 
-    public function resendSslApprovalEmail(string $id): Response
+    public function resendSslApprovalEmail(float|int $resellerId): Response
     {
-        return $this->connector->send(new ResendSslApprovalEmail($id));
+        return $this->connector->send(new ResendSslApprovalEmail($resellerId));
     }
 
     public function services(float|int $resellerId): Response
@@ -166,29 +165,29 @@ class Reseller extends BaseResource
         return $this->connector->send(new SplitPackage($resellerId));
     }
 
-    public function stackUser(float|int $resellerId, string $stackUserId): Response
-    {
-        return $this->connector->send(new StackUser($resellerId, $stackUserId));
-    }
-
-    public function stackUserFtpLocks(float|int $resellerId, string $stackUserId): Response
-    {
-        return $this->connector->send(new StackUserFtpLocks($resellerId, $stackUserId));
-    }
-
-    public function stackUserGrants(float|int $resellerId, string $stackUserId): Response
-    {
-        return $this->connector->send(new StackUserGrants($resellerId, $stackUserId));
-    }
-
-    public function stackUserPackageAllowance(float|int $resellerId, float|int $stackUserPackageAllowanceId): Response
-    {
-        return $this->connector->send(new StackUserPackageAllowance($resellerId, $stackUserPackageAllowanceId));
-    }
-
     public function stackCpUsers(float|int $resellerId): Response
     {
         return $this->connector->send(new StackCpUsers($resellerId));
+    }
+
+    public function stackUser(float|int $resellerId): Response
+    {
+        return $this->connector->send(new StackUser($resellerId));
+    }
+
+    public function stackUserFtpLocks(float|int $resellerId): Response
+    {
+        return $this->connector->send(new StackUserFtpLocks($resellerId));
+    }
+
+    public function stackUserGrants(float|int $resellerId): Response
+    {
+        return $this->connector->send(new StackUserGrants($resellerId));
+    }
+
+    public function stackUserPackageAllowance(float|int $resellerId): Response
+    {
+        return $this->connector->send(new StackUserPackageAllowance($resellerId));
     }
 
     public function virtualNameservers(float|int $resellerId): Response

@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -7,25 +6,21 @@ namespace JamesKingDev\TwentyI\Requests\WebsiteTurbo;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Assign Package.
- */
-class AssignPackage extends Request implements HasBody
+class AssignPackage implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $websiteTurboId,
+        protected readonly float|int $packageId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/website_turbo/{$this->websiteTurboId}/assignPackage";
+        return "/package/{$this->packageId}/websiteTurbo/assign";
     }
 }

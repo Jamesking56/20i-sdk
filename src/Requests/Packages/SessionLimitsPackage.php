@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * Session Limits package.
+ * Session Limits Package.
  */
 class SessionLimitsPackage extends Request
 {
@@ -22,6 +23,6 @@ class SessionLimitsPackage extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/sessionlimits";
+        return "/package/{$this->packageId}/sessionLimits";
     }
 }

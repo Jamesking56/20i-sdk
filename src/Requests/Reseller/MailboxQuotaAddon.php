@@ -1,27 +1,26 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Reseller;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Mailbox Quota Addon.
- */
-class MailboxQuotaAddon extends Request
+class MailboxQuotaAddon implements HasBody
 {
-    protected Method $method = Method::GET;
+    use HasJsonBody;
+
+    protected Method $method = Method::POST;
 
     public function __construct(
-        protected string $id,
+        protected readonly string $id,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/mailbox_quota_addon/{$this->id}";
+        return "/reseller/mailboxQuotaAddon/{$this->id}";
     }
 }

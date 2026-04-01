@@ -1,19 +1,24 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Packages;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * Transfers EPP Code.
+ * Transfers Epp Code.
  */
-class TransfersEppCode extends Request
+class TransfersEppCode extends Request implements HasBody
 {
-    protected Method $method = Method::GET;
+    use HasJsonBody;
+
+    protected Method $method = Method::POST;
 
     public function __construct(
         protected float|int $packageId,
@@ -23,6 +28,6 @@ class TransfersEppCode extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/domain/{$this->domainId}/authCode";
+        return "/package/{$this->packageId}/domain/{$this->domainId}/transfer/eppCode";
     }
 }

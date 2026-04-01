@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -7,25 +6,21 @@ namespace JamesKingDev\TwentyI\Requests\CloudServers;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Cancel Timeline Upgrade.
- */
-class CancelTimelineUpgrade extends Request implements HasBody
+class CancelTimelineUpgrade implements HasBody
 {
     use HasJsonBody;
 
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $resellerId,
+        protected readonly float|int $serverId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/reseller/{$this->resellerId}/cloudServerCancelTimelineUpgrade";
+        return "/cloudServer/{$this->serverId}/timelineUpgrade/cancel";
     }
 }

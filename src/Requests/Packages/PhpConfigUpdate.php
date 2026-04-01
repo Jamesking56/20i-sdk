@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -11,7 +12,7 @@ use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * PHP Config Update.
+ * Php Config Update.
  */
 class PhpConfigUpdate extends Request implements HasBody
 {
@@ -21,12 +22,12 @@ class PhpConfigUpdate extends Request implements HasBody
 
     public function __construct(
         protected float|int $packageId,
-        protected string $phpConfigId,
+        protected float|int $phpConfigId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/phpConfig/{$this->phpConfigId}/updateConfig";
+        return "/package/{$this->packageId}/web/phpConfig/{$this->phpConfigId}";
     }
 }

@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -19,14 +18,14 @@ use Saloon\Http\Response;
 
 class CloudServers extends BaseResource
 {
-    public function cancelTimelineUpgrade(float|int $resellerId): Response
+    public function cancelTimelineUpgrade(float|int $serverId): Response
     {
-        return $this->connector->send(new CancelTimelineUpgrade($resellerId));
+        return $this->connector->send(new CancelTimelineUpgrade($serverId));
     }
 
-    public function listServerProviders(float|int $resellerId): Response
+    public function listServerProviders(): Response
     {
-        return $this->connector->send(new ListServerProviders($resellerId));
+        return $this->connector->send(new ListServerProviders());
     }
 
     public function orderCloudServer(float|int $resellerId): Response
@@ -39,28 +38,28 @@ class CloudServers extends BaseResource
         return $this->connector->send(new RenewCloudServer($resellerId));
     }
 
-    public function serverProductSpecs(float|int $resellerId): Response
+    public function serverProductSpecs(string $provider): Response
     {
-        return $this->connector->send(new ServerProductSpecs($resellerId));
+        return $this->connector->send(new ServerProductSpecs($provider));
     }
 
-    public function timelineUpgradePrice(float|int $resellerId): Response
+    public function timelineUpgradePrice(float|int $serverId): Response
     {
-        return $this->connector->send(new TimelineUpgradePrice($resellerId));
+        return $this->connector->send(new TimelineUpgradePrice($serverId));
     }
 
-    public function timelineUpgrades(float|int $resellerId): Response
+    public function timelineUpgrades(float|int $serverId): Response
     {
-        return $this->connector->send(new TimelineUpgrades($resellerId));
+        return $this->connector->send(new TimelineUpgrades($serverId));
     }
 
-    public function upgradeServer(float|int $resellerId): Response
+    public function upgradeServer(float|int $serverId): Response
     {
-        return $this->connector->send(new UpgradeServer($resellerId));
+        return $this->connector->send(new UpgradeServer($serverId));
     }
 
-    public function upgradeServerPrice(float|int $resellerId): Response
+    public function upgradeServerPrice(float|int $serverId): Response
     {
-        return $this->connector->send(new UpgradeServerPrice($resellerId));
+        return $this->connector->send(new UpgradeServerPrice($serverId));
     }
 }

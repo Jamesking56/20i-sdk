@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -23,6 +24,6 @@ class Forwarders extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/email/{$this->emailId}/mailForwarders";
+        return "/package/{$this->packageId}/email/{$this->emailId}/forwarders";
     }
 }

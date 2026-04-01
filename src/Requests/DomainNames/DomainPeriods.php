@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -8,19 +7,12 @@ namespace JamesKingDev\TwentyI\Requests\DomainNames;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-/**
- * Domain Periods.
- */
 class DomainPeriods extends Request
 {
     protected Method $method = Method::GET;
 
-    public function __construct()
-    {
-    }
-
     public function resolveEndpoint(): string
     {
-        return '/domain-period';
+        return '/domain-periods';
     }
 }

@@ -1,28 +1,26 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Reseller;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Stack User Package Allowance.
- */
-class StackUserPackageAllowance extends Request
+class StackUserPackageAllowance implements HasBody
 {
-    protected Method $method = Method::GET;
+    use HasJsonBody;
+
+    protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $resellerId,
-        protected float|int $stackUserPackageAllowanceId,
+        protected readonly float|int $resellerId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/reseller/{$this->resellerId}/stackUserPackageAllowance/{$this->stackUserPackageAllowanceId}";
+        return "/reseller/{$this->resellerId}/user/packageAllowance";
     }
 }
