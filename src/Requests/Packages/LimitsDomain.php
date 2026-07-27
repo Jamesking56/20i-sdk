@@ -1,23 +1,20 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Packages;
 
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\Traits\Body\HasJsonBody;
 
 /**
  * Limits Domain.
  */
-class LimitsDomain extends Request implements HasBody
+class LimitsDomain extends Request
 {
-    use HasJsonBody;
-
-    protected Method $method = Method::POST;
+    protected Method $method = Method::GET;
 
     public function __construct(
         protected float|int $packageId,

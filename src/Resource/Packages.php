@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -287,9 +286,9 @@ class Packages extends BaseResource
         return $this->connector->send(new Dns($packageId, $domainId));
     }
 
-    public function dnsDefault(float|int $packageId): Response
+    public function dnsDefault(float|int $packageId, float|int $domainId): Response
     {
-        return $this->connector->send(new DnsDefault($packageId));
+        return $this->connector->send(new DnsDefault($packageId, $domainId));
     }
 
     public function dnsGoogleApps(float|int $packageId, float|int $domainId): Response
@@ -407,9 +406,9 @@ class Packages extends BaseResource
         return $this->connector->send(new EmailForwarderConfig($packageId, $emailId));
     }
 
-    public function emailForwarders(float|int $packageId): Response
+    public function emailForwarders(float|int $packageId, float|int $emailId): Response
     {
-        return $this->connector->send(new EmailForwarders($packageId));
+        return $this->connector->send(new EmailForwarders($packageId, $emailId));
     }
 
     public function emailStats(float|int $packageId, float|int $emailId): Response
@@ -445,6 +444,11 @@ class Packages extends BaseResource
     public function getPackageWebInfo(float|int $packageId): Response
     {
         return $this->connector->send(new GetPackageWebInfo($packageId));
+    }
+
+    public function getSshKeys(float|int $packageId): Response
+    {
+        return $this->connector->send(new GetSshKeys($packageId));
     }
 
     public function homeDirectory(float|int $packageId): Response
@@ -642,16 +646,6 @@ class Packages extends BaseResource
         return $this->connector->send(new SshIpAddress($packageId));
     }
 
-    public function getSshKeys(float|int $packageId): Response
-    {
-        return $this->connector->send(new GetSshKeys($packageId));
-    }
-
-    public function updateSshKeys(float|int $packageId): Response
-    {
-        return $this->connector->send(new UpdateSshKeys($packageId));
-    }
-
     public function sslAddFree(float|int $packageId): Response
     {
         return $this->connector->send(new SslAddFree($packageId));
@@ -722,19 +716,24 @@ class Packages extends BaseResource
         return $this->connector->send(new TransfersStatus($packageId, $domainId));
     }
 
+    public function updateSshKeys(float|int $packageId): Response
+    {
+        return $this->connector->send(new UpdateSshKeys($packageId));
+    }
+
     public function webDiskUsage(float|int $packageId): Response
     {
         return $this->connector->send(new WebDiskUsage($packageId));
     }
 
-    public function webUsageStats(float|int $packageId): Response
-    {
-        return $this->connector->send(new WebUsageStats($packageId));
-    }
-
     public function webmail(float|int $packageId, float|int $emailId): Response
     {
         return $this->connector->send(new Webmail($packageId, $emailId));
+    }
+
+    public function webUsageStats(float|int $packageId): Response
+    {
+        return $this->connector->send(new WebUsageStats($packageId));
     }
 
     public function welcomeEmails(float|int $packageId): Response

@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -22,6 +23,6 @@ class Profile extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/profileId";
+        return "/package/{$this->packageId}/profile";
     }
 }

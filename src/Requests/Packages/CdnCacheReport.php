@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -22,6 +23,6 @@ class CdnCacheReport extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/cacheReport";
+        return "/package/{$this->packageId}/web/cdn/cacheReport";
     }
 }

@@ -17,9 +17,6 @@ use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\HasTimeout;
 
-/**
- * 20i.com Reseller API.
- */
 class TwentyI extends Connector
 {
     use HasTimeout;
@@ -30,7 +27,7 @@ class TwentyI extends Connector
 
     public function __construct(
         #[\SensitiveParameter]
-        private string $token,
+        private readonly string $token,
     ) {
     }
 

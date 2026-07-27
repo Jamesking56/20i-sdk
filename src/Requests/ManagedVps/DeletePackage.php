@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -10,9 +9,6 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Delete Package.
- */
 class DeletePackage extends Request implements HasBody
 {
     use HasJsonBody;
@@ -20,12 +16,12 @@ class DeletePackage extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $managedVpsId,
+        protected readonly float|int $managedVpsId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/managed_vps/{$this->managedVpsId}/deleteWeb";
+        return "/managedVPS/{$this->managedVpsId}/package/delete";
     }
 }

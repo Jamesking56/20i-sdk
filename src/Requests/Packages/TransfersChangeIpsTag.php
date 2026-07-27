@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -11,7 +12,7 @@ use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
 /**
- * Transfers Change IPS Tag.
+ * Transfers Change Ips Tag.
  */
 class TransfersChangeIpsTag extends Request implements HasBody
 {
@@ -27,6 +28,6 @@ class TransfersChangeIpsTag extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/domain/{$this->domainId}/tag";
+        return "/package/{$this->packageId}/domain/{$this->domainId}/transfer/changeIpsTag";
     }
 }

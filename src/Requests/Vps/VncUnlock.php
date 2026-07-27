@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -10,9 +9,6 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * VNC Unlock.
- */
 class VncUnlock extends Request implements HasBody
 {
     use HasJsonBody;
@@ -20,12 +16,12 @@ class VncUnlock extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $vpsId,
+        protected readonly float|int $vpsId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/vps/{$this->vpsId}/unlockVnc";
+        return "/vps/{$this->vpsId}/vnc/unlock";
     }
 }

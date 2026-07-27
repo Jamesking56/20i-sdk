@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -13,9 +12,9 @@ use Saloon\Http\Response;
 
 class MssqlDatabases extends BaseResource
 {
-    public function assignDatabase(float|int $mssqlId): Response
+    public function assignDatabase(float|int $packageId): Response
     {
-        return $this->connector->send(new AssignDatabase($mssqlId));
+        return $this->connector->send(new AssignDatabase($packageId));
     }
 
     public function listDatabases(): Response
@@ -23,8 +22,8 @@ class MssqlDatabases extends BaseResource
         return $this->connector->send(new ListDatabases());
     }
 
-    public function retrieveDatabase(float|int $mssqlId): Response
+    public function retrieveDatabase(string $databaseId): Response
     {
-        return $this->connector->send(new RetrieveDatabase($mssqlId));
+        return $this->connector->send(new RetrieveDatabase($databaseId));
     }
 }

@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -21,11 +20,17 @@ class CdnPurgeCache extends Request implements HasBody
 
     public function __construct(
         protected float|int $packageId,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/purgeCdnByUrl";
+        return "/package/{$this->packageId}/web/manageCdn";
+    }
+
+    public function defaultBody(): ?array
+    {
+        return [
+            'action' => 'purge',
+        ];
     }
 }

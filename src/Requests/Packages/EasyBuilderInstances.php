@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * Easy Builder Instances.
+ * EasyBuilder Instances.
  */
 class EasyBuilderInstances extends Request
 {
@@ -22,6 +23,6 @@ class EasyBuilderInstances extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/easyBuilderInstance";
+        return "/package/{$this->packageId}/web/easyBuilder/instances";
     }
 }

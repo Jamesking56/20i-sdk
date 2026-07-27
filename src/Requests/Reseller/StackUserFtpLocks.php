@@ -1,28 +1,27 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Reseller;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Stack User FTP locks.
- */
-class StackUserFtpLocks extends Request
+class StackUserFtpLocks extends Request implements HasBody
 {
-    protected Method $method = Method::GET;
+    use HasJsonBody;
+
+    protected Method $method = Method::POST;
 
     public function __construct(
-        protected float|int $resellerId,
-        protected string $stackUserId,
+        protected readonly float|int $resellerId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/reseller/{$this->resellerId}/stackUser/{$this->stackUserId}/ftpLocks";
+        return "/reseller/{$this->resellerId}/user/ftpLocks";
     }
 }

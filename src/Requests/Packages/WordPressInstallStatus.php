@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -22,6 +23,6 @@ class WordPressInstallStatus extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/wordpressIsInstalled";
+        return "/package/{$this->packageId}/wordpress/install/status";
     }
 }

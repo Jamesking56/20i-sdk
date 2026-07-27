@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -13,18 +12,18 @@ use Saloon\Http\Response;
 
 class WebsiteTurbo extends BaseResource
 {
-    public function assignPackage(float|int $websiteTurboId): Response
+    public function assignPackage(float|int $packageId): Response
     {
-        return $this->connector->send(new AssignPackage($websiteTurboId));
+        return $this->connector->send(new AssignPackage($packageId));
     }
 
-    public function listWebsiteTurbo(float|int $websiteTurboId): Response
+    public function listWebsiteTurbo(): Response
     {
-        return $this->connector->send(new ListWebsiteTurbo($websiteTurboId));
+        return $this->connector->send(new ListWebsiteTurbo());
     }
 
-    public function unassignPackage(float|int $websiteTurboId): Response
+    public function unassignPackage(float|int $packageId): Response
     {
-        return $this->connector->send(new UnassignPackage($websiteTurboId));
+        return $this->connector->send(new UnassignPackage($packageId));
     }
 }

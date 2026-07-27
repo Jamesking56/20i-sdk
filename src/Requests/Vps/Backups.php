@@ -1,26 +1,18 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\Vps;
 
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Backups.
- */
-class Backups extends Request implements HasBody
+class Backups extends Request
 {
-    use HasJsonBody;
-
-    protected Method $method = Method::POST;
+    protected Method $method = Method::GET;
 
     public function __construct(
-        protected float|int $vpsId,
+        protected readonly float|int $vpsId,
     ) {
     }
 

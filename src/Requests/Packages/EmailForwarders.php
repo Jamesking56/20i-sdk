@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -17,11 +18,12 @@ class EmailForwarders extends Request
 
     public function __construct(
         protected float|int $packageId,
+        protected float|int $emailId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/allMailForwarders";
+        return "/package/{$this->packageId}/email/{$this->emailId}/forwarder";
     }
 }

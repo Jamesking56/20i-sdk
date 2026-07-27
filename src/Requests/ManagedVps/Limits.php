@@ -1,31 +1,23 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
 namespace JamesKingDev\TwentyI\Requests\ManagedVps;
 
-use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Limits.
- */
-class Limits extends Request implements HasBody
+class Limits extends Request
 {
-    use HasJsonBody;
-
-    protected Method $method = Method::POST;
+    protected Method $method = Method::GET;
 
     public function __construct(
-        protected float|int $managedVpsId,
+        protected readonly float|int $managedVpsId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/managed_vps/{$this->managedVpsId}/limits";
+        return "/managedVPS/{$this->managedVpsId}/limits";
     }
 }

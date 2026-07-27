@@ -1,5 +1,4 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
 
 declare(strict_types=1);
 
@@ -10,9 +9,6 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-/**
- * Resend SSL Approval Email.
- */
 class ResendSslApprovalEmail extends Request implements HasBody
 {
     use HasJsonBody;
@@ -20,12 +16,12 @@ class ResendSslApprovalEmail extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected string $id,
+        protected readonly float|int $resellerId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/tls_certificate/{$this->id}/retryApproval";
+        return "/reseller/{$this->resellerId}/ssl/resendApprovalEmail";
     }
 }

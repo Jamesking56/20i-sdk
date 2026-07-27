@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -23,6 +24,6 @@ class DomainPrice extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/domain/{$this->domainId}/servicePrice";
+        return "/package/{$this->packageId}/domain/{$this->domainId}/price";
     }
 }

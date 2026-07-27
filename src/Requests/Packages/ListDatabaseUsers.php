@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * List Database users.
+ * List Database Users.
  */
 class ListDatabaseUsers extends Request
 {
@@ -18,7 +19,7 @@ class ListDatabaseUsers extends Request
     public function __construct(
         protected float|int $packageId,
         protected float|int $databaseId,
-        protected string $userId,
+        protected float|int $userId,
     ) {
     }
 

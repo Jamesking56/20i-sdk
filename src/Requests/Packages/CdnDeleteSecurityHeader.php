@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -26,6 +27,6 @@ class CdnDeleteSecurityHeader extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/deleteCdnSecurityHeader";
+        return "/package/{$this->packageId}/web/cdn/deleteSecurityHeader";
     }
 }

@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * PHP Config Allowed.
+ * Php Config Allowed.
  */
 class PhpConfigAllowed extends Request
 {
@@ -22,6 +23,6 @@ class PhpConfigAllowed extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/allowedPhpConfiguration";
+        return "/package/{$this->packageId}/web/phpConfigAllowed";
     }
 }

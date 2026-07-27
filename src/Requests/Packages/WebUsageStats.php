@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -22,6 +23,6 @@ class WebUsageStats extends Request
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/web/usage";
+        return "/package/{$this->packageId}/web/webStats";
     }
 }

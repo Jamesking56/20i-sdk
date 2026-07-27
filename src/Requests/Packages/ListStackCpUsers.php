@@ -1,5 +1,6 @@
 <?php
-/* GENERATED FILE - Do not edit directly */
+
+// GENERATED FILE - Do not edit directly
 
 declare(strict_types=1);
 
@@ -9,7 +10,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * List StackCP Users.
+ * List Stack Cp Users.
  */
 class ListStackCpUsers extends Request
 {
@@ -17,11 +18,12 @@ class ListStackCpUsers extends Request
 
     public function __construct(
         protected float|int $packageId,
+        protected float|int $domainId,
     ) {
     }
 
     public function resolveEndpoint(): string
     {
-        return "/package/{$this->packageId}/stackUserList";
+        return "/package/{$this->packageId}/domain/{$this->domainId}/stackcpUsers";
     }
 }
